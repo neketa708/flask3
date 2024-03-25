@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Вот наши студенты</h1>
+    <img src="../static/image/logo.png" alt="logo">
+    <a href="/">На главную</a>
+    <div class="row">
+        {% for st in student%}
+            <p class="col-12 col-md-6">
+                Имя студента: {{ st.name }}, 
+                Фамилия: {{ st.last_name }}<br>
+                Группа: {{ st.group }}<br>
+                E-mail: {{ st.email }}<br>
+                {% for eval in evaluations %}
+                    {% if eval.student_id == st.id_ %}
+                        <div class="row" >
+                            <p class="col-12 col-md-6">
+                                Предмет: {{ eval.title }}, Оценка: {{ eval.value }}
+                            </p>
+                        </div>
+                    {% endif %}    
+                {% endfor %}
+            </p>
+        {% endfor %}
+    </div>
+</body>
+</html>

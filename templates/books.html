@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+</head>
+<body>
+    <h1>Список книг в базе</h1>
+    <img src="../static/image/logo.png" alt="logo">
+    <a href="/">На главную</a>
+    <div class="row">
+        {% for i in books%}
+            <p class="col-12 col-md-6">
+                Название книги: {{ i.book_name }}<br> 
+                Год издания: {{ i.year_of_publication }}<br>
+                Количество экземпляров: {{ i.number_of_copies }}<br>
+                ID Автора: {{ i.author_id }}<br>
+            </p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    <ul class="nav nav-pills justify-content-center align-items-center">
+        <li class="nav-item">
+            <a href="/clothes/jacket/" class="nav-link">Куртка</a>
+        </li>
+    </ul>
+    <div class="row">
+        <h1 class="col-12 col-md-12 display-2">Наш магазин предлагает лучшую одежду</h1>
+    </div>
+{% endblock %}
